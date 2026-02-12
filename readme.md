@@ -4,7 +4,7 @@
 
 This is the official website for **SOCAM INTERNATIONAL LIMITED**, a Hong Kong-based professional electronic components distributor. The website is a single-page scrolling site designed to introduce the company and make it easy for customers to get in touch.
 
-**Live URL**: [https://socam.com.hk](https://socam.com.hk) (after domain configuration)
+**Live URL**: [https://socam.site](https://socam.site) (after domain configuration)
 
 ## Tech Stack
 
@@ -45,7 +45,7 @@ socam/
 All company info is in `index.html`. Search for these sections:
 
 - **Phone number**: Search for `18017287575`
-- **Email**: Search for `josh@linposh.com.cn`
+- **Email**: Search for `xuc@xingzhanhan.com`
 - **Address**: Search for `RM06, 13A/F`
 - **Company name**: Search for `SOCAM INTERNATIONAL LIMITED`
 
@@ -131,4 +131,4 @@ Edit the `CNAME` file with your new domain (one domain per line, no `https://`).
 
 - Brand logos are currently using text placeholders — replace with actual logo images when available
 - Google Map embed uses a generic Harbour City location — update the embed URL with the exact office coordinates if needed
-- The `CNAME` file contains a placeholder domain (`socam.com.hk`) — update with the actual purchased domain before deployment
+- The `CNAME` file is configured with the domain `socam.site` purchased from Namecheap
