@@ -1,0 +1,706 @@
+/* ============================================================
+   SOCAM INTERNATIONAL LIMITED - Official Website Stylesheet
+   ============================================================
+   Color Palette:
+   - Primary Blue:   #0056b3
+   - Dark Blue:      #003d80
+   - Light Blue:     #e8f0fe
+   - Accent Blue:    #0078d4
+   - Dark Text:      #1a1a2e
+   - Body Text:      #4a4a6a
+   - Light Gray BG:  #f7f8fc
+   - White:          #ffffff
+   ============================================================ */
+
+/* ==================== CSS Reset & Base ==================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* offset for fixed navbar */
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #4a4a6a;
+    line-height: 1.7;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==================== Utility: Container ==================== */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==================== Navigation Bar ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(26, 26, 46, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #0078d4, #0056b3);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.nav-link {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile menu toggle button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger animation when open */
+.nav-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a1628 0%, #1a1a2e 30%, #0056b3 100%);
+    overflow: hidden;
+    padding: 120px 0 80px;
+}
+
+/* Decorative background pattern */
+.hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(0, 120, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 86, 179, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(0, 120, 212, 0.08) 0%, transparent 40%);
+    animation: subtlePulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes subtlePulse {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==================== Buttons ==================== */
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0078d4, #0056b3);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 86, 179, 0.5);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ==================== Section Common Styles ==================== */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #0056b3, #0078d4);
+    border-radius: 2px;
+    margin: 0 auto 24px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #6a6a8a;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+/* ==================== About Us Section ==================== */
+.about {
+    background-color: #f7f8fc;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: #4a4a6a;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text strong {
+    color: #1a1a2e;
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.highlight-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #e8f0fe, #d0e2ff);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0056b3;
+}
+
+.highlight-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.highlight-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    color: #6a6a8a;
+    margin-bottom: 0;
+}
+
+/* ==================== Brands Section ==================== */
+.brands {
+    background-color: #ffffff;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.brand-card {
+    background: #ffffff;
+    border: 1px solid #e8edf5;
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 86, 179, 0.12);
+    border-color: #0078d4;
+}
+
+.brand-logo-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, #e8f0fe, #d0e2ff);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #0056b3;
+    letter-spacing: 1px;
+}
+
+.brand-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.brand-name-cn {
+    font-size: 0.9rem;
+    color: #8a8aaa;
+    margin-bottom: 16px;
+}
+
+.brand-description {
+    font-size: 0.95rem;
+    color: #4a4a6a;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.brand-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #0056b3;
+    background-color: #e8f0fe;
+    border-radius: 20px;
+}
+
+/* ==================== Contact Section ==================== */
+.contact {
+    background-color: #f7f8fc;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #0078d4, #0056b3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.contact-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contact-detail h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8a8aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.contact-detail a {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1a1a2e;
+}
+
+.contact-detail a:hover {
+    color: #0056b3;
+}
+
+.contact-detail p {
+    font-size: 0.95rem;
+    color: #4a4a6a;
+    line-height: 1.6;
+}
+
+.contact-map {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    min-height: 360px;
+}
+
+.contact-map iframe {
+    display: block;
+    min-height: 360px;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    background-color: #1a1a2e;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon-sm {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+}
+
+.footer-company-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+}
+
+/* ==================== Scroll Reveal Animation ==================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== Responsive Design ==================== */
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.6rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Mobile: below 768px */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 68px;
+    }
+
+    .nav-container {
+        height: 64px;
+    }
+
+    /* Show hamburger, hide desktop nav */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        flex-direction: column;
+        background-color: #1a1a2e;
+        padding: 100px 30px 40px;
+        gap: 4px;
+        transition: right 0.35s ease;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 14px 18px;
+        border-radius: 8px;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        min-height: auto;
+        padding: 140px 0 80px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Section adjustments */
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Brands single column on mobile */
+    .brands-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .brand-card {
+        padding: 28px 24px;
+    }
+}
+
+/* Small mobile: below 480px */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .highlight-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
