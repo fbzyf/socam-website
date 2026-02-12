@@ -294,7 +294,22 @@ img {
 
 /* ==================== About Us Section ==================== */
 .about {
-    background-color: #f7f8fc;
+    background: linear-gradient(rgba(10, 22, 40, 0.82), rgba(26, 26, 46, 0.85)),
+                url('../images/about-bg.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+/* Override text colors for dark background */
+.about .section-title {
+    color: #ffffff;
+}
+
+.about-text p {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.about-text strong {
+    color: #ffffff !important;
 }
 
 .about-content {
@@ -654,6 +669,11 @@ img {
 @media (max-width: 768px) {
     html {
         scroll-padding-top: 68px;
+    }
+
+    /* iOS 不支持 background-attachment: fixed */
+    .about {
+        background-attachment: scroll;
     }
 
     .nav-container {
