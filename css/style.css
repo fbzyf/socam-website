@@ -387,7 +387,17 @@ img {
 
 /* ==================== Brands Section ==================== */
 .brands {
-    background-color: #ffffff;
+    background: linear-gradient(rgba(10, 22, 40, 0.88), rgba(26, 26, 46, 0.9)),
+                url('../images/brands-bg.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+.brands .section-title {
+    color: #ffffff;
+}
+
+.brands .section-description {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .brands-grid {
@@ -497,7 +507,17 @@ img {
 
 /* ==================== Contact Section ==================== */
 .contact {
-    background-color: #f7f8fc;
+    background: linear-gradient(rgba(10, 22, 40, 0.85), rgba(26, 26, 46, 0.88)),
+                url('../images/contact-bg.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+.contact .section-title {
+    color: #ffffff;
+}
+
+.contact .section-description {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .contact-grid {
@@ -672,7 +692,9 @@ img {
     }
 
     /* iOS 不支持 background-attachment: fixed */
-    .about {
+    .about,
+    .brands,
+    .contact {
         background-attachment: scroll;
     }
 
