@@ -401,9 +401,15 @@ img {
 }
 
 .brands-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
+}
+
+.brand-card-link {
+    width: calc(33.333% - 20px);
+    min-width: 280px;
 }
 
 .brand-card {
@@ -679,8 +685,12 @@ img {
     }
 
     .brands-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+
+    .brand-card-link {
+        width: calc(50% - 12px);
+        min-width: 260px;
     }
 
     .contact-grid {
@@ -759,10 +769,10 @@ img {
     }
 
     /* Brands single column on mobile */
-    .brands-grid {
-        grid-template-columns: 1fr;
+    .brand-card-link {
+        width: 100%;
         max-width: 400px;
-        margin: 0 auto;
+        min-width: unset;
     }
 
     .brand-card {
